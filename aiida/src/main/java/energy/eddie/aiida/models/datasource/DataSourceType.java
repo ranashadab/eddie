@@ -16,7 +16,8 @@ public enum DataSourceType {
     INBOUND(Identifiers.INBOUND, "Inbound"),
     SIMULATION(Identifiers.SIMULATION, "Simulation"),
     MODBUS(Identifiers.MODBUS_TCP, "Modbus"),
-    CIM_ADAPTER(Identifiers.CIM_ADAPTER, "CIM Adapter");
+    CIM_ADAPTER(Identifiers.CIM_ADAPTER, "CIM Adapter"),
+    OPENHAB(Identifiers.OPENHAB, "openHAB");
 
     private final String identifier;
     private final String name;
@@ -50,6 +51,7 @@ public enum DataSourceType {
         public static final String SIMULATION = "SIMULATION";
         public static final String MODBUS_TCP = "MODBUS";
         public static final String CIM_ADAPTER = "CIM_ADAPTER";
+        public static final String OPENHAB = "OPENHAB";
 
         private Identifiers() {}
     }

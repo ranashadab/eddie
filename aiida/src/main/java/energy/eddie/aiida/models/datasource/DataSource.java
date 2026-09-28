@@ -11,6 +11,7 @@ import energy.eddie.aiida.dtos.datasource.mqtt.at.OesterreichsEnergieDataSourceD
 import energy.eddie.aiida.dtos.datasource.mqtt.cim.CimDataSourceDto;
 import energy.eddie.aiida.dtos.datasource.mqtt.fr.MicroTeleinfoV3DataSourceDto;
 import energy.eddie.aiida.dtos.datasource.mqtt.it.SinapsiAlfaDataSourceDto;
+import energy.eddie.aiida.dtos.datasource.mqtt.openhab.OpenhabDataSourceDto;
 import energy.eddie.aiida.dtos.datasource.mqtt.sga.SmartGatewaysDataSourceDto;
 import energy.eddie.aiida.dtos.datasource.mqtt.shelly.ShellyDataSourceDto;
 import energy.eddie.aiida.dtos.datasource.simulation.SimulationDataSourceDto;
@@ -20,6 +21,7 @@ import energy.eddie.aiida.models.datasource.mqtt.at.OesterreichsEnergieDataSourc
 import energy.eddie.aiida.models.datasource.mqtt.cim.CimDataSource;
 import energy.eddie.aiida.models.datasource.mqtt.fr.MicroTeleinfoV3DataSource;
 import energy.eddie.aiida.models.datasource.mqtt.it.SinapsiAlfaDataSource;
+import energy.eddie.aiida.models.datasource.mqtt.openhab.OpenhabDataSource;
 import energy.eddie.aiida.models.datasource.mqtt.sga.SmartGatewaysDataSource;
 import energy.eddie.aiida.models.datasource.mqtt.shelly.ShellyDataSource;
 import energy.eddie.aiida.models.image.Image;
@@ -119,6 +121,7 @@ public abstract class DataSource {
             case SimulationDataSourceDto parsedDto -> new SimulationDataSource(parsedDto, userId);
             case ModbusDataSourceDto parsedDto -> new ModbusDataSource(parsedDto, userId);
             case CimDataSourceDto parsedDto -> new CimDataSource(parsedDto, userId);
+            case OpenhabDataSourceDto parsedDto -> new OpenhabDataSource(parsedDto, userId);
             default -> throw new IllegalArgumentException(
                     "Unsupported dto type: " + dto.getClass() + " / " + dto.type()
             );
